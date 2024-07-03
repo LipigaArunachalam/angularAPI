@@ -1,0 +1,26 @@
+<!-- src/app/data-display/data-display.component.html -->
+<div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+  
+  <div *ngIf="!error && data.length > 0">
+    <h2>Data from API</h2>
+    <ul>
+      <li *ngFor="let item of data">
+        <strong>Name:</strong> {{ item.name }} <br>
+        <strong>Email:</strong> {{ item.email }} <br>
+        <strong>Message:</strong> {{ item.message }} <br><br>
+      </li>
+    </ul>
+  </div>
+  
+  <div *ngIf="!error && data.length === 0">
+    <p>No data available</p>
+  </div>
+  
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+  
